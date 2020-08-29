@@ -26,4 +26,8 @@ module.exports = class Bot {
             console.log("Bot online");
         });
     }
+
+    sendchat(string) {
+        if (this.msg) this.msg.channel.send(string);
+    }
 }
