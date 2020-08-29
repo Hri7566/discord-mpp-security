@@ -10,10 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Hri7566/discord-mpp-security.git"
   },
-  "author": "Hri7566, fishi, Nebula, Anonygold, Caution, Wolfy, Shadow",
+  "author": "Hri7566, fishi, Nebula, Anonygold, Caution, Wolfy, Shadow, AsCody",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Hri7566/discord-mpp-security/issues"
   },
-  "homepage": "https://github.com/Hri7566/discord-mpp-security#readme"
+  "homepage": "https://github.com/Hri7566/discord-mpp-security#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  }
 }

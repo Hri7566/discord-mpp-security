@@ -1,2 +1,6 @@
 # Remove node_modules (obviously)
 node_modules/
+nodemon.json
+
+# Remove environment variables
+.env
