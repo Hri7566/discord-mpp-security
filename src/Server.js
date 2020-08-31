@@ -2,7 +2,7 @@
 const WebSocket = require('ws');
 
 module.exports = class Server {
-    constructor (port) {
+    constructor(port) {
         this.ranks = require('./database/ranks.json');
         this.wss = new WebSocket.Server({
             port: port
@@ -10,19 +10,14 @@ module.exports = class Server {
     }
 
     start() {
-        // someone help me - Hri7566
-        this.wss.on('request', (req) => {
-            const conn = req.accept(null, req.origin);
-
-            conn.on('connect')
-
-            conn.on('message', (msg) => {
-                console.log(`Message: ${msg.utf8Data}`);
-                conn.sendUTF(`hi :P`);
+        this.wss.on('connection', (ws) => {
+            ws.on('message', msg => {
+                console.log(`Message Recived: ${msg}`);
+                ws.send(`Echo: ${msg}`);
             });
-            
-            conn.on('close', (code, desc) => {
-                console.log("Client left");
+
+            ws.on('close', msg => {
+                console.log(`Websocket Disconnected: ${msg}`);
             });
         });
         console.log("WS server started");
