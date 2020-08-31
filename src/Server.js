@@ -10,6 +10,7 @@ module.exports = class Server {
     }
 
     start() {
+        // Websocket server witchery
         this.wss.on('connection', (ws) => {
             ws.on('message', msg => {
                 console.log(`Message Recived: ${msg}`);
